@@ -375,6 +375,358 @@
      WhatsApp मा Order गर्नुहोस्
   </a>
 
+<!-- Topup X Nepal Customer Reviews -->
+<section id="customer-reviews">
+  <div class="reviews-header">
+    <span class="reviews-tag">TOPUP X NEPAL</span>
+    <h2>Customer Reviews ⭐</h2>
+    <p>तपाईंको अनुभव हामीसँग साझा गर्नुहोस्।</p>
+
+    <div class="rating-summary">
+      <strong id="avg-rating">—</strong>
+      <div>
+        <div id="avg-stars" class="stars-display">☆☆☆☆☆</div>
+        <small id="review-count">अहिलेसम्म स्वीकृत समीक्षा छैन</small>
+      </div>
+    </div>
+  </div>
+
+  <form id="review-form">
+    <h3>आफ्नो Rating दिनुहोस्</h3>
+
+    <label for="customer-name">तपाईंको नाम</label>
+    <input id="customer-name" maxlength="50"
+      placeholder="नाम लेख्नुहोस्" required>
+
+    <label>तपाईंको Star Rating</label>
+    <div class="star-picker" id="star-picker">
+      <button type="button" data-star="1" aria-label="1 star">☆</button>
+      <button type="button" data-star="2" aria-label="2 stars">☆</button>
+      <button type="button" data-star="3" aria-label="3 stars">☆</button>
+      <button type="button" data-star="4" aria-label="4 stars">☆</button>
+      <button type="button" data-star="5" aria-label="5 stars">☆</button>
+    </div>
+
+    <input id="selected-rating" type="hidden" value="5">
+
+    <label for="customer-review">तपाईंको Review</label>
+    <textarea id="customer-review" maxlength="1000"
+      placeholder="सेवा कस्तो लाग्यो?" required></textarea>
+
+    <button class="submit-review" type="submit">
+      Review पठाउनुहोस्
+    </button>
+    <p id="review-message" role="status"></p>
+    <small>तपाईंको समीक्षा जाँचपछि मात्र सार्वजनिक हुनेछ।</small>
+  </form>
+
+  <div id="reviews-list" aria-live="polite">
+    समीक्षा लोड हुँदैछ...
+  </div>
+</section>
+
+<style>
+#customer-reviews {
+  max-width: 760px;
+  margin: 35px auto;
+  padding: 22px;
+  font-family: Arial, sans-serif;
+  color: #f8fafc;
+  background: #111827;
+  border: 1px solid #374151;
+  border-radius: 18px;
+  box-sizing: border-box;
+}
+#customer-reviews * { box-sizing: border-box; }
+.reviews-header { text-align: center; }
+.reviews-tag { color: #38bdf8; font-size: 12px; letter-spacing: 2px; }
+#customer-reviews h2 { margin: 10px 0; }
+#customer-reviews p, #customer-reviews small { color: #cbd5e1; }
+.rating-summary {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; margin: 22px 0; text-align: left;
+}
+#avg-rating { font-size: 42px; }
+.stars-display, .star-picker button { color: #fbbf24; }
+.stars-display { font-size: 25px; }
+#review-form {
+  padding: 18px; background: #1f2937; border-radius: 12px;
+}
+#review-form h3 { margin-top: 0; }
+#review-form label { display: block; margin: 15px 0 7px; }
+#review-form input:not([type="hidden"]),
+#review-form textarea {
+  width: 100%; padding: 12px; border-radius: 8px;
+  border: 1px solid #4b5563; background: #111827;
+  color: white; font-size: 16px;
+}
+#review-form textarea { min-height: 100px; resize: vertical; }
+.star-picker { display: flex; gap: 8px; }
+.star-picker button {
+  background: transparent; border: 0; font-size: 36px;
+  cursor: pointer; padding: 0 3px;
+}
+.submit-review {
+  width: 100%; margin-top: 18px; padding: 13px;
+  border: 0; border-radius: 9px; background: #0ea5e9;
+  color: white; font-size: 16px; font-weight: bold; cursor: pointer;
+}
+.review-card {
+  margin-top: 14px; padding: 16px; background: #1f2937;
+  border-radius: 10px; overflow-wrap: anywhere;
+}
+.review-card p { white-space: pre-wrap; }
+.review-meta { color: #fbbf24; }
+@media(max-width:480px) {
+  #customer-reviews { padding: 14px; margin: 18px auto; }
+  .rating-summary { gap: 10px; }
+}
+</style>
+
+<script>
+(() => {
+  // आफ्नो Cloudflare Worker URL यहाँ राख्नुहोस्।
+  const API_URL = "PASTE_YOUR_WORKER_URL_HERE";
+
+  const $ = id => document.getElementById(id);
+  let selected = 5;
+
+  function setStars(value) {
+    selected = value;
+    $("selected-rating").value = value;
+
+    document.querySelectorAll("#star-picker button").forEach(btn => {
+      const n = Number(btn.dataset.star);
+      btn.textContent = n <= value ? "★" : "☆";
+
+<!-- Topup X Nepal Customer Reviews -->
+<section id="customer-reviews">
+  <div class="reviews-header">
+    <span class="reviews-tag">TOPUP X NEPAL</span>
+    <h2>Customer Reviews ⭐</h2>
+    <p>तपाईंको अनुभव हामीसँग साझा गर्नुहोस्।</p>
+
+    <div class="rating-summary">
+      <strong id="avg-rating">—</strong>
+      <div>
+        <div id="avg-stars" class="stars-display">☆☆☆☆☆</div>
+        <small id="review-count">अहिलेसम्म स्वीकृत समीक्षा छैन</small>
+      </div>
+    </div>
+  </div>
+
+  <form id="review-form">
+    <h3>आफ्नो Rating दिनुहोस्</h3>
+
+    <label for="customer-name">तपाईंको नाम</label>
+    <input id="customer-name" maxlength="50"
+      placeholder="नाम लेख्नुहोस्" required>
+
+    <label>तपाईंको Star Rating</label>
+    <div class="star-picker" id="star-picker">
+      <button type="button" data-star="1" aria-label="1 star">☆</button>
+      <button type="button" data-star="2" aria-label="2 stars">☆</button>
+      <button type="button" data-star="3" aria-label="3 stars">☆</button>
+      <button type="button" data-star="4" aria-label="4 stars">☆</button>
+      <button type="button" data-star="5" aria-label="5 stars">☆</button>
+    </div>
+
+    <input id="selected-rating" type="hidden" value="5">
+
+    <label for="customer-review">तपाईंको Review</label>
+    <textarea id="customer-review" maxlength="1000"
+      placeholder="सेवा कस्तो लाग्यो?" required></textarea>
+
+    <button class="submit-review" type="submit">
+      Review पठाउनुहोस्
+    </button>
+    <p id="review-message" role="status"></p>
+    <small>तपाईंको समीक्षा जाँचपछि मात्र सार्वजनिक हुनेछ।</small>
+  </form>
+
+  <div id="reviews-list" aria-live="polite">
+    समीक्षा लोड हुँदैछ...
+  </div>
+</section>
+
+<style>
+#customer-reviews {
+  max-width: 760px;
+  margin: 35px auto;
+  padding: 22px;
+  font-family: Arial, sans-serif;
+  color: #f8fafc;
+  background: #111827;
+  border: 1px solid #374151;
+  border-radius: 18px;
+  box-sizing: border-box;
+}
+#customer-reviews * { box-sizing: border-box; }
+.reviews-header { text-align: center; }
+.reviews-tag { color: #38bdf8; font-size: 12px; letter-spacing: 2px; }
+#customer-reviews h2 { margin: 10px 0; }
+#customer-reviews p, #customer-reviews small { color: #cbd5e1; }
+.rating-summary {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; margin: 22px 0; text-align: left;
+}
+#avg-rating { font-size: 42px; }
+.stars-display, .star-picker button { color: #fbbf24; }
+.stars-display { font-size: 25px; }
+#review-form {
+  padding: 18px; background: #1f2937; border-radius: 12px;
+}
+#review-form h3 { margin-top: 0; }
+#review-form label { display: block; margin: 15px 0 7px; }
+#review-form input:not([type="hidden"]),
+#review-form textarea {
+  width: 100%; padding: 12px; border-radius: 8px;
+  border: 1px solid #4b5563; background: #111827;
+  color: white; font-size: 16px;
+}
+#review-form textarea { min-height: 100px; resize: vertical; }
+.star-picker { display: flex; gap: 8px; }
+.star-picker button {
+  background: transparent; border: 0; font-size: 36px;
+  cursor: pointer; padding: 0 3px;
+}
+.submit-review {
+  width: 100%; margin-top: 18px; padding: 13px;
+  border: 0; border-radius: 9px; background: #0ea5e9;
+  color: white; font-size: 16px; font-weight: bold; cursor: pointer;
+}
+.review-card {
+  margin-top: 14px; padding: 16px; background: #1f2937;
+  border-radius: 10px; overflow-wrap: anywhere;
+}
+.review-card p { white-space: pre-wrap; }
+.review-meta { color: #fbbf24; }
+@media(max-width:480px) {
+  #customer-reviews { padding: 14px; margin: 18px auto; }
+  .rating-summary { gap: 10px; }
+}
+</style>
+
+<script>
+(() => {
+  // आफ्नो Cloudflare Worker URL यहाँ राख्नुहोस्।
+  const API_URL = "PASTE_YOUR_WORKER_URL_HERE";
+
+  const $ = id => document.getElementById(id);
+  let selected = 5;
+
+  function setStars(value) {
+    selected = value;
+    $("selected-rating").value = value;
+
+    document.querySelectorAll("#star-picker button").forEach(btn => {
+      const n = Number(btn.dataset.star);
+      btn.textContent = n <= value ? "★" : "☆";
+      btn.setAttribute("aria-pressed", String(n === value));
+    });
+  }
+
+  document.querySelectorAll("#star-picker button").forEach(btn => {
+    btn.addEventListener("click", () => setStars(Number(btn.dataset.star)));
+  });
+  setStars(5);
+
+  async function loadReviews() {
+    try {
+      const response = await fetch(API_URL);
+      if (!response.ok) throw new Error("लोड गर्न सकिएन");
+      const data = await response.json();
+
+      $("avg-rating").textContent =
+        data.count ? Number(data.average).toFixed(1) : "—";
+      $("avg-stars").textContent =
+        "★".repeat(Math.round(data.average || 0)) +
+        "☆".repeat(5 - Math.round(data.average || 0));
+      $("review-count").textContent =
+        `${data.count} वटा स्वीकृत समीक्षा`;
+
+      const list = $("reviews-list");
+      list.replaceChildren();
+
+      if (!data.reviews.length) {
+        list.textContent = "अहिलेसम्म सार्वजनिक समीक्षा छैन।";
+        return;
+      }
+
+      data.reviews.forEach(review => {
+        const card = document.createElement("article");
+        card.className = "review-card";
+
+        const heading = document.createElement("strong");
+        heading.textContent = review.name;
+
+        const stars = document.createElement("div");
+        stars.className = "review-meta";
+        stars.textContent =
+          "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+
+        const content = document.createElement("p");
+        content.textContent = review.review;
+
+        const date = document.createElement("small");
+        date.textContent = review.date || "";
+
+        card.append(heading, stars, content, date);
+        list.append(card);
+      });
+    } catch {
+      $("reviews-list").textContent =
+        "समीक्षा लोड हुन सकेन। API URL र backend जाँच गर्नुहोस्।";
+    }
+  }
+
+  $("review-form").addEventListener("submit", async event => {
+    event.preventDefault();
+
+    const name = $("customer-name").value.trim();
+    const review = $("customer-review").value.trim();
+    const message = $("review-message");
+    const button = document.querySelector(".submit-review");
+
+    if (!name || !review) {
+      message.textContent = "नाम र Review दुवै लेख्नुहोस्।";
+      return;
+    }
+
+    if (API_URL === "PASTE_YOUR_WORKER_URL_HERE") {
+      message.textContent = "पहिले backend API URL सेट गर्नुपर्छ।";
+      return;
+    }
+
+    button.disabled = true;
+    message.textContent = "Review पठाउँदै...";
+
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, rating: selected, review })
+      });
+      const result = await response.json();
+
+      if (!response.ok) throw new Error(result.error || "पठाउन सकिएन");
+
+      message.textContent =
+        "धन्यवाद! तपाईंको Review जाँचका लागि पठाइयो।";
+      $("review-form").reset();
+      setStars(5);
+      await loadReviews();
+    } catch (error) {
+      message.textContent = error.message || "त्रुटि भयो। फेरि प्रयास गर्नुहोस्।";
+    } finally {
+      button.disabled = false;
+    }
+  });
+
+  loadReviews();
+})();
+</script>
+       
 </section>
 
   yadi ordergarna chahanu huncha vane WhatsAppma   ordergarna nabhulnu jola
